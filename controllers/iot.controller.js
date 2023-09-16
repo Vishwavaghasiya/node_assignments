@@ -92,7 +92,7 @@ const deleteRecord = async (req, res) => {
             throw new Error("Something wents wrong , please try again or later !")
         }
 
-        await iotService.deleteRecord(iotId);
+        await iotService.deleteRecord(req.params.iotId);
 
         res.status(200).json({ success: true, message: "Record delete successfully !", data: iotEx });
     } catch (error) {
